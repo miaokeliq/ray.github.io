@@ -1872,7 +1872,7 @@ var snowStorm = null;
                 .css("width", d.loadedPer + "%")
                 .one(c, function () {
                   parseInt(d.loadedPer) >= 99 &&
-                    (e.find(".loading-text").text("تحميل كاملة"),
+                    (e.find(".loading-text").text("Loaded"),
                     $("#j-playBgMusic").fadeIn(200));
                 });
           });
