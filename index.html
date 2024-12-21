@@ -3,18 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Encrypted Content</title>
     <style>
       body {
-        font-family: "Georgia", serif; /* 使用Georgia字体，它有意大利斜体风格 */
-        font-style: italic; /* 设置文字为意大利斜体 */
+        font-family: "Georgia", serif;
+        font-style: italic;
         margin: 0;
         padding: 40px;
-        background: linear-gradient(
-          135deg,
-          #f0f0f0 0%,
-          #e0e0e0 100%
-        ); /* 渐变背景 */
+        background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
         color: #333;
         line-height: 1.6;
       }
@@ -24,41 +20,87 @@
       p:last-child {
         margin-bottom: 0;
       }
+      #hiddenContent {
+        display: none;
+      }
+      #passwordSection {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+      }
     </style>
   </head>
   <body>
-    <audio autoplay loop volume="0.1">
-      <source src="./musiccc.MP3" type="audio/mpeg" />
-      Your browser does not support the audio element.
-    </audio>
-    <p>
-      I've gotten used to sharing the interesting things I find in life with you
-      first. 💌
-    </p>
-    <p>
-      After carefully considering what you just said to me, I have realized the
-      reason, and it is indeed my fault. I sincerely apologize to you, and I
-      will not beat around the bush anymore. So, I hope you forgive me. 🙏 I
-      promise you that we will go back to how things were before, because you
-      know I am genuinely good to you. I always patiently watch every word or
-      video you send me, and whenever you are sad or angry, I can catch your
-      emotions and in the end, I will comfort you. 🤗
-    </p>
-    <p>
-      In short, I was terribly wrong because my intention was to make you happy,
-      but my constant beating around the bush made you annoyed, which went
-      against my original intention. So, I have figured it out, and I will not
-      do this anymore because this is the first time I have liked a girl so
-      much, and I have no experience in pursuing. No one is perfect, and I will
-      make mistakes, but I will solve this problem. So, Rayan, let's go back to
-      the way things were (we have known each other for half a year, and time
-      flies). ⏳
-    </p>
-    <p>
-      (I am very sorry for saying that you did not thank me because I did not
-      hear clearly what you said in the voice message and misunderstood you, so
-      I apologize for that.) 😔 I think I am a very sincere person to you, so I
-      hope you will give me the opportunity to continue to make you happy. 😊
-    </p>
+    <div id="passwordSection">
+      <p>
+        Plz enter the name of the game we often play together to see the words I
+        want to say to you.
+      </p>
+      <input
+        type="text"
+        id="passwordInput"
+        placeholder="pls enter the name of the game"
+      />
+      <button
+        onclick="checkPassword()"
+        style="
+          margin-top: 20px;
+          background: #67a1e6;
+          border: 1px #67a1e6;
+          width: 100px;
+          height: 30px;
+          color: white;
+          border-radius: 8px;
+        "
+      >
+        Submit
+      </button>
+    </div>
+    <div id="hiddenContent">
+      <p>
+        I've gotten used to sharing the interesting things I find in life with
+        you first. 💌
+      </p>
+      <p>
+        After carefully considering what you just said to me, I have realized
+        the reason, and it is indeed my fault. I sincerely apologize to you, and
+        I will not beat around the bush anymore. So, I hope you forgive me. 🙏 I
+        promise you that we will go back to how things were before, because you
+        know I am genuinely good to you. I always patiently watch every word or
+        video you send me, and whenever you are sad or angry, I can catch your
+        emotions and in the end, I will comfort you. 🤗
+      </p>
+      <p>
+        In short, I was terribly wrong because my intention was to make you
+        happy, but my constant beating around the bush made you annoyed, which
+        went against my original intention. So, I have figured it out, and I
+        will not do this anymore because this is the first time I have liked a
+        girl so much, and I have no experience in pursuing. No one is perfect,
+        and I will make mistakes, but I will solve this problem. So, Rayan,
+        let's go back to the way things were (we have known each other for half
+        a year, and time flies). ⏳
+      </p>
+      <p>
+        (I am very sorry for saying that you did not thank me because I did not
+        hear clearly what you said in the voice message and misunderstood you,
+        so I apologize for that.) 😔 I think I am a very sincere person to you,
+        so I hope you will give me the opportunity to continue to make you
+        happy. 😊
+      </p>
+    </div>
+
+    <script>
+      function checkPassword() {
+        var password = document.getElementById("passwordInput").value;
+        var hiddenContent = document.getElementById("hiddenContent");
+        var passwordSection = document.getElementById("passwordSection");
+        if (password === "roblox" || password === "Roblox") {
+          hiddenContent.style.display = "block";
+          passwordSection.style.display = "none";
+        } else {
+          alert("Incorrect password. Please try again.");
+        }
+      }
+    </script>
   </body>
 </html>
